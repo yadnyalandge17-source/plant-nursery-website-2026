@@ -1,80 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Green Leaf Nursery</title>
 
     <style>
-        body {
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            background-color: #f3f9f1;
         }
 
+        body {
+            background: #f3f8ed;
+            color: #263d2b;
+        }
+
+        /* HEADER */
         header {
-            background-color: #2e7d32;
+            background: linear-gradient(135deg, #0b6b3a, #35a853);
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 35px 20px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 35px;
+            font-size: 42px;
+            margin-bottom: 10px;
         }
 
+        header p {
+            font-size: 18px;
+        }
+
+        /* NAVBAR */
         nav {
-            background-color: #1b5e20;
+            background: #06452a;
             text-align: center;
-            padding: 15px;
+            padding: 16px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 20px;
+            margin: 0 18px;
             font-size: 18px;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 20px;
         }
 
         nav a:hover {
-            color: #c8e6c9;
+            background: #49b85d;
         }
 
+        /* HERO */
         .hero {
+            min-height: 500px;
+
+            background:
+            linear-gradient(rgba(20,80,40,0.45), rgba(20,80,40,0.45)),
+            url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e")
+            center/cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 60px 20px;
-            background-color: #dcedc8;
+            color: white;
+        }
+
+        .hero-content {
+            background: rgba(0, 60, 30, 0.45);
+            padding: 45px;
+            border-radius: 20px;
+            backdrop-filter: blur(3px);
         }
 
         .hero h2 {
-            color: #1b5e20;
-            font-size: 40px;
+            font-size: 48px;
+            margin-bottom: 18px;
         }
 
         .hero p {
             font-size: 20px;
+            margin-bottom: 28px;
         }
 
-        .btn {
-            background-color: #388e3c;
+        .explore-btn {
+            display: inline-block;
+            background: #5bc85b;
             color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
         }
 
+        .explore-btn:hover {
+            background: #2e8b3c;
+        }
+
+        /* WELCOME */
+        .welcome {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fffdf4;
+        }
+
+        .welcome h2 {
+            color: #176b35;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .welcome p {
+            font-size: 18px;
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* FEATURES */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 50px 30px;
+            background: #edf7e8;
+        }
+
+        .feature-card {
+            background: white;
+            width: 250px;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #18743b;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* POPULAR PLANTS */
         .plants {
-            padding: 40px 20px;
+            background: #f7f5e9;
+            padding: 60px 30px;
             text-align: center;
         }
 
         .plants h2 {
-            color: #2e7d32;
-            font-size: 30px;
+            color: #176b35;
+            font-size: 35px;
+            margin-bottom: 35px;
         }
 
         .plant-container {
@@ -84,127 +185,320 @@
             flex-wrap: wrap;
         }
 
-        .card {
-            background-color: white;
-            width: 250px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px #aaa;
+        .plant-card {
+            width: 260px;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: 0.3s;
         }
 
-        .card img {
+        .plant-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .plant-card img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
-            border-radius: 8px;
         }
 
-        .card h3 {
-            color: #2e7d32;
+        .plant-card h3 {
+            color: #176b35;
+            padding: 15px 10px 5px;
+        }
+
+        .plant-card p {
+            padding: 5px 15px 15px;
+            color: #666;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
+            margin: 10px;
         }
 
+        .buy-btn {
+            display: inline-block;
+            background: #16843b;
+            color: white !important;
+            text-decoration: none;
+            padding: 11px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .buy-btn:hover {
+            background: #0b6029;
+        }
+
+        /* FOOTER */
         footer {
-            background-color: #1b5e20;
+            background: #043b22;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 30px;
         }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 6px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav {
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 15px;
+            }
+
+            .hero {
+                min-height: 420px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
+
     <header>
-        <h1>🌿 Green Leaf Nursery</h1>
+
+        <h1>🌿 Green Leaf Nursery 🌿</h1>
+
         <p>Plants for a Beautiful and Healthy Life</p>
+
     </header>
 
-    <!-- Navigation -->
+
+    <!-- NAVIGATION -->
+
     <nav>
+
         <a href="index.html">Home</a>
+
         <a href="plants.html">Plants</a>
+
         <a href="aboutus.html">About Us</a>
+
         <a href="contact.html">Contact</a>
-        <a href="plants.html" class="btn">Explore Plants</a>
+
     </nav>
 
-    <!-- Home Section -->
+
+    <!-- HERO -->
+
     <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Bring Nature Into Your Home 🌱</h2>
+
+            <p>
+                Discover beautiful and healthy plants
+                for your home, garden and office.
+            </p>
+
+            <a href="plants.html" class="explore-btn">
+                🌿 Explore Plants
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
         <h2>Welcome to Green Leaf Nursery 🌱</h2>
 
         <p>
-            Discover beautiful plants for your home, garden and office.
+            We provide fresh, healthy and beautiful plants
+            to make your surroundings greener and more peaceful.
+            Choose your favourite plant and bring nature closer to you.
         </p>
 
-        <button class="btn">Explore Plants</button>
     </section>
 
-    <!-- Plants Section -->
-    <section class="plants" id="plants">
 
-        <h2>Our Popular Plants</h2>
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🌱</div>
+
+            <h3>Healthy Plants</h3>
+
+            <p>
+                Fresh and healthy plants carefully selected
+                for your home and garden.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🚚</div>
+
+            <h3>Easy Delivery</h3>
+
+            <p>
+                Get your favourite plants delivered
+                safely and conveniently.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💚</div>
+
+            <h3>Best Quality</h3>
+
+            <p>
+                Quality plants at affordable prices
+                for every plant lover.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🌍</div>
+
+            <h3>Go Green</h3>
+
+            <p>
+                Make your home greener and contribute
+                to a healthier environment.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR PLANTS -->
+
+    <section class="plants">
+
+        <h2>Our Popular Plants 🌿</h2>
 
         <div class="plant-container">
 
-            <!-- Plant 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6"
-                    alt="Money Plant">
 
-                <h3>Money Plant</h3>
+            <!-- ROSE -->
 
-                <p>Beautiful indoor plant for your home.</p>
+            <div class="plant-card">
 
-                <p class="price">₹199</p>
+                <img
+                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946"
+                alt="Rose Plant">
 
-                <button class="btn">Buy Now</button>
+                <h3>Rose Plant 🌹</h3>
+
+                <p>Beautiful rose plant for your garden.</p>
+
+                <div class="price">₹299</div>
+
+                <a href="plants.html" class="buy-btn">
+                    🛒 Buy Now
+                </a>
+
             </div>
 
-            <!-- Plant 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e"
-                    alt="Green Plant">
 
-                <h3>Indoor Plant</h3>
+            <!-- MONEY PLANT -->
 
-                <p>Perfect plant for your office and room.</p>
+            <div class="plant-card">
 
-                <p class="price">₹299</p>
+                <img
+                src="https://images.unsplash.com/photo-1459156212016-c812468e2115"
+                alt="Money Plant">
 
-                <button class="btn">Buy Now</button>
+                <h3>Money Plant 🌿</h3>
+
+                <p>Easy to grow indoor plant for your home.</p>
+
+                <div class="price">₹199</div>
+
+                <a href="plants.html" class="buy-btn">
+                    🛒 Buy Now
+                </a>
+
             </div>
 
-            <!-- Plant 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946"
-                    alt="Flower Plant">
 
-                <h3>Flower Plant</h3>
+            <!-- FLOWER -->
+
+            <div class="plant-card">
+
+                <img
+                src="https://images.unsplash.com/photo-1495231916356-a86217efff12"
+                alt="Flower Plant">
+
+                <h3>Flower Plant 🌸</h3>
 
                 <p>Beautiful flowers for your garden.</p>
 
-                <p class="price">₹249</p>
+                <div class="price">₹249</div>
 
-                <button class="btn">Buy Now</button>
+                <a href="plants.html" class="buy-btn">
+                    🛒 Buy Now
+                </a>
+
             </div>
 
         </div>
 
     </section>
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
+
     <footer>
-        <p>© 2026 Green Leaf Nursery</p>
-        <p>Contact: 9876543210 | Email: greenleaf@gmail.com</p>
+
+        <h3>🌿 Green Leaf Nursery</h3>
+
+        <p>Grow Green • Live Green • Stay Healthy</p>
+
+        <p>© 2026 Green Leaf Nursery. All Rights Reserved.</p>
+
     </footer>
 
 </body>
-
 </html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plants - Green Leaf Nursery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f8e9;
+        }
+
+        header {
+            background-color: #1d6e3a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background-color: #1b5e20;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .plants {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .plants h2 {
+            color: #2e7d32;
+            font-size: 35px;
+        }
+
+        .plant-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px #aaa;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            color: #2e7d32;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card .btn {
+    display: inline-block;
+    background-color: #2e7d32 !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-size: 17px !important;
+    font-weight: bold !important;
+    line-height: normal !important;
+
+    min-width: 110px;
+    min-height: 42px;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.card .btn:hover {
+    background-color: #1b5e20 !important;
+    color: #ffffff !important;
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌿 Green Leaf Nursery 🌿</h1>
+    <p>Plants for a Beautiful and Healthy Life</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html" class="buy-btn">Buy Now</a>
+</nav>
+
+<section class="plants">
+
+    <h2>Our Plants 🌱</h2>
+
+    <div class="plant-container">
+
+        <!-- Plant 1 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Rose Plant">
+
+            <h3>Rose Plant 🌹</h3>
+
+            <p>Beautiful rose plant for your garden.</p>
+
+            <p class="price">₹299</p>
+
+            <button type="button" class="btn" onclick="buyPlant('Rose Plant')">
+                Buy Now
+            </button>
+                </div>
+
+        <!-- Plant 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115" alt="Money Plant">
+
+            <h3>Money Plant 🌿</h3>
+
+            <p>Easy to grow indoor plant for your home.</p>
+
+            <p class="price">₹199</p>
+
+            <button type="button" class="btn" onclick="buyPlant('Money Plant')">
+                Buy Now
+            </button>
+        </div>
+
+        <!-- Plant 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" alt="Flower Plant">
+
+            <h3>Flower Plant 🌸</h3>
+
+            <p>Beautiful flowers for your garden.</p>
+
+            <p class="price">₹249</p>
+
+            <button type="button" class="btn" onclick="buyPlant('Flower Plant')">
+                Buy Now
+            </button>
+        </div>
+
+        <!-- Plant 4 -->
+        <div class="card">
+             <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e" alt="Tulsi Plant">
+
+             <h3>Tulsi Plant 🌿</h3>
+
+             <p>Fresh Tulsi plant for your home.</p>
+
+             <p class="price">₹149</p>
+
+             <button type="button" class="btn" onclick="buyPlant('Tulsi Plant')">
+                 Buy Now
+                </button>   
+            </div>
+</section>
+
+<footer>
+    <p style="text-align:center;">
+        © 2026 Green Leaf Nursery
+    </p>
+</footer>
+
+<script>
+function buyPlant(plantName) {
+    alert("🌿 " + plantName + " added successfully! 🛒");
+}
+</script>
+</body>
+</html>

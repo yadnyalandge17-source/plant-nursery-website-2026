@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - Green Leaf Nursery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f8e9;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background-color: #1b5e20;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .contact {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px #aaa;
+        }
+
+        .contact h2 {
+            text-align: center;
+            color: #2e7d32;
+            font-size: 35px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact textarea {
+            height: 120px;
+        }
+
+        .btn {
+            background-color: #2e7d32;
+            color: white !important;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌿 Green Leaf Nursery 🌿</h1>
+    <p>Plants for a Beautiful and Healthy Life</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="plants.html">Plants</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="contact">
+
+    <h2>Contact Us 📞</h2>
+
+    <p>📍 Address: Pune, Maharashtra, India</p>
+    <p>📞 Phone: +91 98765 43210</p>
+    <p>📧 Email: greenleafnursery@gmail.com</p>
+
+    <h3>Send Us a Message</h3>
+
+    <form onsubmit="sendMessage(event)">
+
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <textarea id="message" placeholder="Enter your message" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+    <p id="successMessage"></p>
+
+</form>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    document.getElementById("successMessage").innerHTML =
+        "✅ Message Sent Successfully! Thank you for contacting us. 🌿";
+
+    document.getElementById("successMessage").style.color = "green";
+    document.getElementById("successMessage").style.fontWeight = "bold";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+</section>
+
+<footer>
+    <p style="text-align:center;">
+        © 2026 Green Leaf Nursery
+    </p>
+</footer>
+
+</body>
+</html>
